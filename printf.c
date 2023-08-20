@@ -1,8 +1,9 @@
 #include "main.h"
+#include <string.h>
 /**
- *_printf- print formatted text to stdout
+ *_printf - print formatted text to stdout
  *@format: format specifiers of printf function
- *return: total no of counts printed
+ *return: total no of characters printed
  */
 int _printf(const char *format, ...)
 {	 int i, st_count;
@@ -23,7 +24,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 's')
 		{
-			st_count = puts(va_arg(git, char *));
+			st_count = _puts(va_arg(git, char *));
 			i++;
 		total_count += (st_count - 1);
 		}
