@@ -7,8 +7,8 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
-
-
+int _pputchar(char c);
+int puts (const char* str);
 
 
 #endif
