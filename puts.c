@@ -15,5 +15,7 @@ for (count = 0; count[str] != '\0'; count++)
 {
 _pputchar(str[count]);
 }
+_pputchar('\n');
+}
 return (count);
 }
