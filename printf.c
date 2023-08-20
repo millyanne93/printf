@@ -11,12 +11,16 @@ int _printf(const char *format, ...)
 	va_list git;
 
 	va_start(git, format);
+	if (format[i] =="%" && format[i] == '\0')
+	{
+		return -1;
+	}
 	for (i = 0; format[i] != '\0'; i++)
 {
-		if (format[i] != '%')
+	{	if (format[i] != '%')
 		{
-			_pputchar(format[i]);
-		}
+		_pputchar(format[i]);
+		}	
 		else if (format[i + 1] == 'c')
 		{
 			_pputchar(va_arg(git, int));
