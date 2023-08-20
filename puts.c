@@ -11,7 +11,7 @@ int _puts(const char *str)
 int count = 0;
 if (str != NULL)
 {
-for (count = 0; count[str] != '\0'; count++)
+for (count = 0; str[count] != '\0'; count++)
 {
 _pputchar(str[count]);
 }
