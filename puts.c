@@ -2,22 +2,18 @@
 #include <string.h>
 
 /**
- * _puts - writes strings to stdout
- * @string: character array of strings passed to the function
+ * _puts - function to writes string to stdout
+ * @str: array of strings passed to the function
  * Return: number of characters written (excluding the null-terminator)
  */
 int _puts(const char *str)
 {
-    int count = 0;
-
-    if (str != NULL)
-    {
-        for (count = 0; count[str] != '\0'; count ++)
-        {
-            _pputchar(str[count]);
-        }
-       _pputchar('\n'); 
-    }
-
-    return count;
+int count = 0;
+if (str != NULL)
+{
+for (count = 0; count[str] != '\0'; count++)
+{
+_pputchar(str[count]);
+}
+return (count);
 }
