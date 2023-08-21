@@ -12,11 +12,15 @@ int i, st_count;
 int total_count = 0;
 va_list git;
 va_start(git, format);
+if (format == NULL)
+{
+return (-1);
+}
 for (i = 0; format[i] != '\0'; i++)
 {
 if (format[i] != '%')
 {
-_pputchar(format[i]);
+write(1, format, 1);
 total_count++;
 }
 else if (format[i + 1] == 'c')
