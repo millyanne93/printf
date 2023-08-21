@@ -8,6 +8,9 @@
 int _printf(const char *format, ...);
 int _pputchar(char c);
 int _puts(const char *str);
-int (*sort_func(char c))(va-list);
+int (*pick_func(char c))(va_list);
+int _string(va_list args);
+int _char(va_list args);
+int _percent(va_list args);
 
 #endif
