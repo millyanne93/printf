@@ -41,6 +41,12 @@ _pputchar('%');
 total_count++;
 i++;
 }
+else 
+{
+_pputchar(*format);
+total_count++;
+i++;
+}
 }
 va_end(git);
 return (total_count);
