@@ -20,7 +20,7 @@ for (i = 0; format[i] != '\0'; i++)
 {
 if (format[i] != '%')
 {
-write(1, format, 1);
+_pputchar(format[i]);
 total_count++;
 }
 else if (format[i + 1] == 'c')
