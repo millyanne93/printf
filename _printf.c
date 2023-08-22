@@ -21,7 +21,7 @@ for (i = 0; format[i] != '\0'; i++)
 if (format[i] != '%')
 {
 _pputchar(format[i]);
-{
+}
 else if (format[i + 1] == 'c')
 {
 _pputchar(va_arg(git, int));
@@ -38,7 +38,8 @@ else if (format[i + 1] == '%')
 {
 _pputchar('%');
 }
-total_count +=;
+total_count += 1;
+}
 va_end(git);
 return (total_count);
 }
