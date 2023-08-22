@@ -52,11 +52,14 @@ int _percent(va_list git __attribute__((unused)))
  */
 int _decimal(va_list git)
 {
-	int count = 0;
 	int mil = va_arg(git, int);
 
-	count = _pputchar(mil);
-	return (count);
+	if (mil == 0)
+	{
+		_pputchar('0');
+		return (1);
+	}
+	return (mil);
 }
 
 /**
