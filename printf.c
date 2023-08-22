@@ -1,5 +1,5 @@
-#include "main.h"
 #include <string.h>
+#include "main.h"
 #include <stdarg.h>
 
 /**
@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
+	int i, st_count;
 	int total_count = 0;
 	va_list git;
 
@@ -22,15 +22,29 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			char spec = format[i + 1];
-
-			total_count += (pick_func(spec))(git);
-			i++;
+			_pputchar(format[i]);
+			total_count++;
 		}
 		else
 		{
-			_pputchar(format[i]);
-			total_count++;
+			if (format[i + 1] == 'c')
+			{
+				_pputchar(va_arg(git, int));
+				i++;
+				total_count++;
+			}
+			else if (format[i + 1] == 's')
+			{
+				st_count = _puts(va_arg(git, char *));
+				total_count += st_count;
+				i++;
+				total_count += (st_count - 1);
+			}
+			else if (format[i + 1] == '%')
+			{
+				_pputchar('%');
+				total_count++;
+			}
 		}
 	}
 	va_end(git);
