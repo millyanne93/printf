@@ -6,25 +6,19 @@
  */
 int (*pick_func(char c))(va_list)
 {
-	if (c == 's')
+	switch (c)
 	{
-		return (&_string);
+		case 's':
+			return (&_string);
+		case '%':
+			return (&_percent);
+		case 'c':
+			return (&_char);
+		case 'd':
+			return (&_decimal);
+		case 'i':
+			return (&_integer);
+		default:
+			return (NULL);
 	}
-	else if (c == '%')
-	{
-		return (&_percent);
-	}
-	else if (c == 'c')
-	{
-		return (&_char);
-	}
-	else if (c == 'd')
-	{
-		return (&_decimal);
-	}
-	else if (c == 'i')
-	{
-		return (&_integer);
-	}
-	return (NULL);
 }
