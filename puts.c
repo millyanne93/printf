@@ -9,7 +9,7 @@
 int _puts(const char *str)
 {
 int count = 0;
-if (str != NULL)
+if (str)
 {
 for (count = 0; str[count] != '\0'; count++)
 {
