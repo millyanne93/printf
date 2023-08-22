@@ -27,12 +27,12 @@ char spec = format[i + 1];
 if (spec == '%')
 {
 _pputchar('%');
-total_count++; 
+total_count++;
 i++;
 }
 else if (pick_func(spec) != NULL)
 {
-total_count += (pick_func(spec))(git); 
+total_count += (pick_func(spec))(git);
 i++;
 }
 else
