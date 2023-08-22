@@ -10,9 +10,6 @@ int _string(va_list git)
 	int count = 0;
 	char *mil = va_arg(git, char *);
 
-	if (str == NULL)
-		return ("nil");
-
 	while (*mil != '\0')
 	{
 		_pputchar(*mil);
@@ -58,7 +55,7 @@ int _decimal(va_list git)
 	int count = 0;
 	int mil = va_arg(git, int);
 
-	count = _pputchar(mil, 0);
+	count = _pputchar(mil);
 	return (count);
 }
 
@@ -72,6 +69,6 @@ int _integer(va_list git)
 	int count = 0;
 	int mil = va_arg(git, int);
 
-	count = _pputchar(mil, 0);
+	count = _pputchar(mil);
 	return (count);
 }
