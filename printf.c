@@ -27,22 +27,26 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (format[i + 1] == 'c')
+			char next_char = format[i + 1];
+			if (next_char == 'c')
 			{
 				_pputchar(va_arg(git, int));
 				i++;
-				total_count++;
 			}
-			else if (format[i + 1] == 's')
+			else if (next_char == 's')
 			{
 				st_count = _puts(va_arg(git, char *));
-				total_count += st_count;
+				total_count += st_count - 1;
 				i++;
-				total_count += (st_count - 1);
 			}
-			else if (format[i + 1] == '%')
+			else if (next_char == '%')
 			{
 				_pputchar('%');
+				total_count++;
+			}
+			else if (next_char == 'd' || next_char == 'i')
+			{
+				_pputchar(next_char);
 				total_count++;
 			}
 		}

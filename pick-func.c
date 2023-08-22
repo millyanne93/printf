@@ -18,8 +18,13 @@ int (*pick_func(char c))(va_list)
 	{
 		return (&_char);
 	}
-	else
+	else if (c == 'd')
 	{
-	return (NULL);
+		return (&_decimal);
 	}
+	else if (c == 'i')
+	{
+		return (&_integer);
+	}
+	return (NULL);
 }
